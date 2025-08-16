@@ -1,0 +1,237 @@
+/* Contextual Whisper Styles */
+
+.cw-widget {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 320px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: white;
+  animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.cw-content {
+  padding: 16px;
+}
+
+.cw-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.cw-icon {
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+.cw-title {
+  font-weight: 600;
+  font-size: 14px;
+  flex: 1;
+}
+
+.cw-close {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.cw-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.cw-message {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 16px;
+  opacity: 0.95;
+}
+
+.cw-actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.cw-btn {
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex: 1;
+}
+
+.cw-btn-primary {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.cw-btn-primary:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.cw-btn-secondary {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.cw-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.cw-debug {
+  font-size: 10px;
+  opacity: 0.6;
+  text-align: center;
+  margin-top: 8px;
+  font-family: monospace;
+}
+
+/* Modal Styles */
+.cw-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10001;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.cw-modal-content {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 70vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: slideInUp 0.3s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.cw-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.cw-modal-header h3 {
+  margin: 0;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.cw-modal-header .cw-close {
+  color: #666;
+  background: #f5f5f5;
+}
+
+.cw-modal-header .cw-close:hover {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.cw-modal-body {
+  padding: 20px;
+  color: #333;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.cw-modal-body strong {
+  color: #667eea;
+  font-weight: 600;
+}
+
+.cw-modal-footer {
+  padding: 20px;
+  border-top: 1px solid #eee;
+  text-align: right;
+}
+
+.cw-modal-footer .cw-btn-primary {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+}
+
+.cw-modal-footer .cw-btn-primary:hover {
+  background: #5a67d8;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .cw-widget {
+    right: 10px;
+    left: 10px;
+    width: auto;
+  }
+  
+  .cw-modal-content {
+    width: 95%;
+    margin: 20px;
+  }
+  
+  .cw-actions {
+    flex-direction: column;
+  }
+}
